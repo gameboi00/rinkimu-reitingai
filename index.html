@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="lt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Skaidrus kandidatų į Seimą kompetencijų ir viešai patikrintų faktų palyginimas."
+    />
+    <title>Rinkis aiškiai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Rinkis aiškiai pradžia">
+        <span class="brand-mark">RA</span>
+        <span>Rinkis aiškiai</span>
+      </a>
+      <nav aria-label="Pagrindinė navigacija">
+        <a class="active" href="#kandidatai">Kandidatai</a>
+        <a href="#metodika">Metodika</a>
+        <a href="#apie">Apie projektą</a>
+      </nav>
+      <button class="ghost-button" id="methodButton">Kaip skaičiuojame?</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow"><span></span> Nepriklausomas pilietinis projektas</div>
+        <h1>Rinkis ne pagal pažadus.<br /><em>Rinkis pagal faktus.</em></h1>
+        <p>
+          Palyginkite kandidatų išsilavinimą, patirtį, finansinį skaidrumą ir
+          viešai patvirtintą informaciją vienoje vietoje.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#kandidatai">Peržiūrėti reitingą <span>↓</span></a>
+          <button class="text-button" id="principlesButton">Mūsų principai <span>→</span></button>
+        </div>
+        <div class="trust-row">
+          <div><strong>4</strong><span>vertinimo sritys</span></div>
+          <div><strong>100%</strong><span>atsekami šaltiniai</span></div>
+          <div><strong>0</strong><span>anoniminių kaltinimų</span></div>
+        </div>
+      </section>
+
+      <section class="ranking-section" id="kandidatai">
+        <div class="section-heading">
+          <div>
+            <span class="section-number">01</span>
+            <p class="kicker">Kandidatų palyginimas</p>
+            <h2>Reitingas</h2>
+          </div>
+          <p class="section-copy">
+            Ekspertinis balas ir bendruomenės nuomonė rodomi atskirai.
+            Trūkstami duomenys nėra vertinami kaip blogas rezultatas.
+          </p>
+        </div>
+
+        <div class="demo-notice">
+          <strong>1 740 realių 2024 m. Seimo rinkimų kandidatų.</strong>
+          Visų kandidatų biografijos, anketos ir 2023 m. deklaracijų išrašai
+          įvertinti automatiškai. Papildoma viešų šaltinių patikra atliekama atskirai.
+        </div>
+
+        <div class="controls">
+          <label class="search">
+            <span aria-hidden="true">⌕</span>
+            <input id="searchInput" type="search" placeholder="Ieškoti pagal vardą ar partiją" />
+          </label>
+          <label>
+            <span class="sr-only">Partija</span>
+            <select id="partyFilter">
+              <option value="all">Visos partijos</option>
+            </select>
+          </label>
+          <label>
+            <span class="sr-only">Rikiavimas</span>
+            <select id="sortSelect">
+              <option value="score">Aukščiausias balas</option>
+              <option value="community">Bendruomenės vertinimas</option>
+              <option value="name">Vardas A–Ž</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="table-shell">
+          <div class="table-head">
+            <span>Vieta</span>
+            <span>Kandidatas</span>
+            <span>Partija</span>
+            <span>Ekspertinis balas</span>
+            <span>Bendruomenė</span>
+            <span></span>
+          </div>
+          <div id="candidateList"></div>
+          <div class="empty-state" id="emptyState" hidden>
+            Pagal pasirinktus filtrus kandidatų nerasta.
+          </div>
+        </div>
+      </section>
+
+      <section class="method-section" id="metodika">
+        <div class="section-heading light">
+          <div>
+            <span class="section-number">02</span>
+            <p class="kicker">Ne nuomonė, o taisyklės</p>
+            <h2>Kaip vertiname?</h2>
+          </div>
+          <p class="section-copy">
+            Formulė vieša, jos versijos archyvuojamos, o kiekvieną balą galima
+            atkurti iš parodytų duomenų.
+          </p>
+        </div>
+        <div class="method-grid">
+          <article>
+            <span class="method-icon">01</span>
+            <h3>Išsilavinimas</h3>
+            <p>Baigtas aukštasis yra neutralus standartas. Ryškiai mažinamas balas už nebaigtą aukštąjį ar žemesnį lygį.</p>
+            <strong>10%</strong>
+          </article>
+          <article>
+            <span class="method-icon">02</span>
+            <h3>Darbo patirtis</h3>
+            <p>Didžiausias skirtumas daromas tarp naujoko, profesionalo ir realios vadovavimo atsakomybės turėjusio kandidato.</p>
+            <strong>20%</strong>
+          </article>
+          <article>
+            <span class="method-icon">03</span>
+            <h3>Finansinis profilis</h3>
+            <p>Vertinami mokesčiai, piniginių lėšų koncentracija, paskolos, turtas ir deklaruoti verslo ryšiai.</p>
+            <strong>25%</strong>
+          </article>
+          <article>
+            <span class="method-icon">04</span>
+            <h3>Viešas patikimumas</h3>
+            <p>Pagrindinis kriterijus ir bendro balo ribotuvas. Rimtų pažeidimų negali kompensuoti diplomas ar stažas.</p>
+            <strong>45%</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="about-section" id="apie">
+        <p class="kicker">Svarbiausia taisyklė</p>
+        <h2>Reitingas padeda klausti.<br />Jis nenusprendžia už rinkėją.</h2>
+        <p>
+          Politinės pažiūros, pažadai ir vertybės nėra paverčiami vienu „teisingumo“
+          balu. Čia lyginami tik patikrinami duomenys ir aiškiai parodomos jų ribos.
+        </p>
+      </section>
+    </main>
+
+    <dialog id="candidateDialog">
+      <button class="dialog-close" aria-label="Uždaryti">×</button>
+      <div id="dialogContent"></div>
+    </dialog>
+
+    <dialog id="infoDialog">
+      <button class="dialog-close" aria-label="Uždaryti">×</button>
+      <div id="infoContent"></div>
+    </dialog>
+
+    <footer>
+      <a class="brand footer-brand" href="#"><span class="brand-mark">RA</span><span>Rinkis aiškiai</span></a>
+      <p>Atviro kodo pilietinės informacijos prototipas · 2026</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
