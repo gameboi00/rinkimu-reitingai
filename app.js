@@ -781,7 +781,7 @@ function openInfo(type) {
 async function loadAllCandidates() {
   candidateList.innerHTML = '<p class="loading-state">Kraunami VRK kandidatų duomenys…</p>';
   try {
-    const response = await fetch("data/candidates-2024.json");
+    const response = await fetch("data/candidates-2024.json?v=20260614-2");
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const payload = await response.json();
     const curatedIds = new Set(curatedCandidates.map((candidate) => candidate.vrkId));
